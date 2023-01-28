@@ -10,20 +10,13 @@ const Pokedex = () => {
 
 	return (
 		<div>
-			<button  onClick={fetchPokemon}>Fetch pokemon</button>
-			<div> { 
-            Lista.map((item, index)=>(
-                <div key={index} style={{ 
-                    item}} >
-                        <p>{item}</p>
-                </div>
-                
-            ))
-           
-         }
-         </div>
-           
-		</div>
+            <button onClick={fetchPokemon}> Fetch Pokemon</button>
+            <ul>
+        {Lista.length > 0 && Lista.map((currentPokemon, index)=>{
+        return (<li key={index}>{currentPokemon.name}</li>)
+        })}
+        </ul>
+    </div>
     );
 }
 export default Pokedex;
